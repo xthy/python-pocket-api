@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#
+# coding=utf-8
 # vim: sw=4 ts=4 st=4
 #
 #  Copyright 2014 Felipe Borges <felipe10borges@gmail.com>
@@ -79,6 +79,8 @@ class Item(object):
             'normal_url' : None,
             'resolved_id' : None,
             'resolved_url' : None,
+            'given_url' : None,
+            'given_title' : None,                        
             'domain_id' : None,
             'origin_domain_id' : None,
             'response_code' : None,
@@ -200,6 +202,8 @@ class Api(object):
                     normal_url = item.get('normal_url'),
                     resolved_id = item.get('resolved_id'),
                     resolved_url = item.get('resolved_url'),
+                    given_url = item.get('given_url'),
+                    given_title = item.get('given_title'),
                     domain_id = item.get('domain_id'),
                     origin_domain_id = item.get('origin_domain_id'),
                     response_code = item.get('response_code'),
@@ -293,6 +297,8 @@ class Api(object):
             items_list[item[1].get('item_id')] = (Item(id = item[1].get('item_id'),
                                                        resolved_id = item[1].get('resolved_id'),
                                                        resolved_url = item[1].get('resolved_url'),
+                                                       given_url = item[1].get('given_url'),
+                                                       given_title = item[1].get('given_title'),
                                                        title = item[1].get('resolved_title'),
                                                        excerpt = item[1].get('excerpt'),
                                                        is_article = item[1].get('is_article'),
